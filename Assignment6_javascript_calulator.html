@@ -1,0 +1,117 @@
+ 
+ 
+<HTML> 
+<HEAD> 
+<TITLE>Calculator using Javascript</TITLE> 
+ 
+<script language = javascript> 
+var op="";
+var num = 0 ;
+
+
+// To display the number
+ 
+function display(n) {
+document.calc.t.value = document.calc.t.value + n ;
+}
+ 
+
+// For operator
+
+function operator(op1) {         
+op = op1 ;
+num= document.calc.t.value ;
+document.calc.t.value = "" ;
+}
+
+
+
+
+function equals() {
+answer(Number(num),Number(document.calc.t.value),op)
+}
+
+
+// To find the answer
+
+function answer(n1,n2, op1) {
+if (op1 == "+" ) 
+ {
+   num1 = n1 ;   
+   num2 = n2 ;
+   result = num1 + num2 ;
+   document.calc.t.value = result ;
+ }
+else if ( op1 == "-" )
+ {
+   num1 = n1 ;   
+   num2 = n2 ;
+   result = num1 - num2 ;
+   document.calc.t.value = result ;
+ } 
+else if ( op1 == "*")
+ {
+   num1 = n1 ;   
+   num2 = n2 ;
+   result = num1 * num2 ;
+   document.calc.t.value = result ;
+ }
+else if ( op1 =="/")
+ {
+   num1 = n1 ;   
+   num2 = n2 ;
+   result = num1 / num2 ;
+   document.calc.t.value = result ; 
+ } 
+ 
+}
+
+
+// To reset the values
+
+function reset() {
+document.calc.t.value = "" ;
+num = "" ;
+}
+</script> 
+ 
+</HEAD> 
+<BODY> 
+<form name = calc> 
+<CENTER>
+<p><input type = text name = t  value = "" size = 20></p> 
+<input type = button value = "   1   " name = b1 onclick = display(1)> 
+<input type = button value = "   2   " name = b2 onclick = display(2)> 
+<input type = button value = "   3   " name = b3 onclick = display(3)> 
+<input type = button value = "      +      " name = badd  onclick = operator("+") >
+<br> 
+
+<input type = button value = "   4   " name = b4 onclick = display(4)> 
+<input type = button value = "   5   " name = b5 onclick = display(5)> 
+<input type = button value = "   6   " name = b6 onclick = display(6)> 
+<input type = button value = "      -      " name = bsub  onclick = operator("-")> 
+<br> 
+
+<input type = button value = "   7   " name = b7 onclick = display(7)> 
+<input type = button value = "   8   " name = b8 onclick = display(8)> 
+<input type = button value = "   9   " name = b9 onclick = display(9)> 
+<input type = button value = "      *      " name = bmul onclick = operator("*")> 
+<br> 
+
+<input type = button value = "    .    " name = bdot onclick = display(".")> 
+<input type = button value = "   0   " name = b0 onclick = display(0)> 
+<input type = button value = "   =   "  name= bequal onclick = equals()> 
+<input type = button value = "      /      " name = bdiv onclick = operator("/")> 
+<br> 
+
+<input type = button value = "    clear    " name = bclear onclick = reset()> 
+
+
+</CENTER> .
+ 
+</form> 
+</BODY> 
+</HTML> 
+ 
+ 
+
